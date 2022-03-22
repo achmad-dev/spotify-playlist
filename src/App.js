@@ -11,7 +11,7 @@ function App() {
         <h2>{data.name}</h2>
         <h3>{data.album.name}</h3>
         <p>{data.artists[0].name}</p>
-        <button>select</button>
+	<button><a href={data.album.artists[0].external_urls.spotify}>select</a></button>
       </div>
     </div>
   );
