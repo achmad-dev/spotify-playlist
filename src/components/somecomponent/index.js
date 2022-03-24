@@ -5,7 +5,7 @@ const AlbumImage = ({ src, children }) => (
   </div>
 );
 
-const DataName = (name) => <h2>{name}</h2>;
+const AlbumDesc = (props) => <h2>Album:{props.name}</h2>;
 
 const AlbumName = ({name, artist, children}) => (
   <div className="AlbumName">
@@ -17,4 +17,4 @@ const AlbumName = ({name, artist, children}) => (
 
 const ButtonUrl = (url) => <button><a href={url}>select</a></button>;
 
-export {AlbumImage, DataName, AlbumName, ButtonUrl};
+export {AlbumImage, AlbumDesc, AlbumName, ButtonUrl};
