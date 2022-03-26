@@ -1,12 +1,12 @@
+import './App.css'
 import data from '../../simple/data.js'
 
-const TrackAlbums = ({ name, album, images, songTitle, songArtist }) => (
+const TrackAlbums = ({ name, album, images, songTitle }) => (
   <div>
     <h1>{name}</h1>
     <h2>{album}</h2>
-    <img src={images} alt={name}/>
+    <img src={images} alt={name} width="300" height="300" className="rotate"/>
     <p>{songTitle}</p>
-    <p>songArtist</p>
   </div>
 );
 
@@ -29,7 +29,6 @@ const ObjectLoop = () => {
               album={name}
               images={src}
               songTitle={song}
-              songArtist={artist}
             />
           );
         })};
