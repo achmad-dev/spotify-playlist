@@ -7,6 +7,7 @@ const TrackAlbums = ({ name, album, images, songTitle }) => (
     <h2>{album}</h2>
     <img src={images} alt={name} width="300" height="300" className="rotate"/>
     <p>{songTitle}</p>
+    <button>select</button>
   </div>
 );
 
