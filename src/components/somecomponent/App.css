@@ -1,10 +1,10 @@
-div {
+.Tracks {
   border: 2px solid black;
   border-radius: 5px;
 }
 
 button {
-  background-color: #4169e1; 
+  background-color: #4169e1;
   border: none;
   color: white;
   padding: 15px 32px;
