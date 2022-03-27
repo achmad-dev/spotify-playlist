@@ -1,5 +1,6 @@
 import './App.css'
 import data from '../../simple/data.js'
+import { GiPlayButton, GiPreviousButton, GiNextButton } from "react-icons/gi";
 
 const TrackAlbums = ({ name, album, images, songTitle, artist }) => (
   <div className="Tracks">
@@ -8,7 +9,11 @@ const TrackAlbums = ({ name, album, images, songTitle, artist }) => (
     <img src={images} alt={name} width="300" height="300" className="rotate"/>
     <p>{songTitle}</p>
     <p>{artist}</p>
-    <button>select</button>
+    <div className="music-button">
+      <button><GiPreviousButton/></button>
+      <button><GiPlayButton/></button>
+      <button><GiNextButton /></button>
+    </div>
   </div>
 );
 
