@@ -23,7 +23,7 @@ const ObjectLoop = () => {
             artists: [{ name: artist }],
             name: song,
           } = data;
-          // console.log(data);
+    
           return (
             <TrackAlbums
               key={idx}
