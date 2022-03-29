@@ -1,34 +1,71 @@
 .App {
-  text-align: center;
+  text-align: top;
 }
 
-.App {
-  background-color: #282c34;
-  min-height: 100vh;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: white;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #282c34;
 }
 
-.rotate :hover {
-  animation: rotation 2s;
+.App-link {
+  color: #61dafb;
 }
 
-@keyframes rotation {
+#rcorners {
+  border-radius: 25px;
+  background: #ffffff;
+  padding: 20px;
+  width: 400px;
+  height: 50px;
+  font-family: var(--font-family,),Helvetica,Arial,sans-serif;
+  font-size: calc(8px + 2vmin);
+}
+
+a {
+  text-decoration:none;
+}
+
+.spotify-button {
+  position: relative;
+  background-color: var(--background-base,#1ed760);
+  color: var(--text-base,#000000);
+  border-radius: 500px;
+  font-size: inherit;
+  padding: 14px 32px;
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  font-family: var(--font-family,),Helvetica,Arial,sans-serif;
+}
+
+.spotify-button:hover {
+  background-color: var(--background-highlight,#1fdf64);
+}
+
+@keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(359deg);
+    transform: rotate(360deg);
   }
-}
-.rotate {
-  animation-timing-function: linear;
-}
-
-.rotate {
-  animation-iteration-count: infinite;
 }
