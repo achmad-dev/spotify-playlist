@@ -23,7 +23,7 @@ if (spotifyToken) {
 function App() {
   // Begin login procedure
   const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-  const REDIRECT_URI = process.env.REACT_APP_AUTH_URL;
+  const REDIRECT_URI = "http://localhost:3000/redirect";
   const AUTH_ENDPOINT = process.env.REACT_APP_AUTH_URL;
   const RESPONSE_TYPE = "token";
 
@@ -55,7 +55,7 @@ function App() {
   const [songs, setSongs] = useState(1);
   const [artists, setArtists] = useState(1);
   const [albums, setAlbums] = useState(1);
-  let placeholder = "https://cover.djpunjab.com/39659/300x700/Om-Namah-Shivaya-Mohan-Kannan.jpg";
+  let placeholder = "https://upload.wikimedia.org/wikipedia/commons/8/8f/Cute-kittens-12929201-1600-1200.jpg";
   let updateResults = (searchString) => {
     // Search songs
     spotifyApi.searchTracks(searchString, { limit: 4, offset: 0 }).then(
