@@ -51,7 +51,27 @@ function App() {
     window.localStorage.removeItem("token");
   }
   // End login procedure
+   const handleInput = (e) => {
+    setSearchKey(e.target.value);
+  }
+// try to to create some fetch
+  const handleSearch = () => {
+    const url = "https://api.spotify.com/v1/search";
+    const keywords = searchKey;
+    const type = "track";
+    fetch(`${url}?q=${keywords}&type=${type}&limit=10`, {
+      headers: {
+        'Authorization' : 'Bearer ' + authToken
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      setMusicData(data.tracks.items);
+      setisDataExist(true);
+    });
+  }
 
+  //end fetch
   const [songs, setSongs] = useState(1);
   const [artists, setArtists] = useState(1);
   const [albums, setAlbums] = useState(1);
