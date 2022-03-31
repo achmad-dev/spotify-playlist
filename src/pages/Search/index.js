@@ -15,6 +15,11 @@ function SearchPage() {
     const [token, setToken] = useState("")
     const [searchKey, setSearchKey] = useState("")
     const [results, setResults] = useState([])
+    const [isDataExist, setIsDataExist] = useState(false);
+    const [selectedMusic, setSelectedMusic] = useState({
+    'id': [],
+    'tracks': [],
+  });
 
 
     useEffect(() => {
@@ -51,17 +56,42 @@ function SearchPage() {
         })
 
         setResults(data.tracks.items)
+        setIsDataExist(true);
     }
+
+    const selectMusic = (data) => {
+    const tempArrMusic = [...selectedMusic.tracks, data];
+    const tempArrMusicId = [...selectedMusic.id, data.uri];
+    setSelectedMusic({
+      'id' : tempArrMusicId,
+      'tracks' : tempArrMusic,
+    });
+  }
+
+  const deselectMusic = (data) => {
+    const index = selectedMusic.id.indexOf(data.uri);
+
+    const tempArrMusic = selectedMusic.tracks;
+    tempArrMusic.splice(index, 1);
+    const tempArrMusicId = selectedMusic.id;
+    tempArrMusicId.splice(index, 1);
+
+    setSelectedMusic({
+      'id' : tempArrMusicId,
+      'tracks' : tempArrMusic,
+    });
+  }
 
 
     const renderTracks = () => {
-        return results.map((artist) => (
+        return results.map((data) => (
             <List
-                key={artist.id}
-                title={artist.name}
-                img={artist.album.images[0].url}
-                artists={artist.artists[0].name}
-                album={artist.album.name}
+                data={data}
+                key={data.uri}
+                title={data.name}
+                img={data.album.images[0].url}
+                artists={data.artists[0].name}
+                album={data.album.name}
 
             />
         ))
@@ -85,13 +115,27 @@ function SearchPage() {
                     : <div></div>
                 }
 
-                <div className="b">
-                    <table className="b">
-                        <h3>
+                <div className="show-search">
+                    <h3>
                             {renderTracks()}
-                        </h3>
-                    </table>
+                    </h3>
                 </div>
+                <div className='musics-wrapper'>
+        {
+          selectedMusic.tracks.map((music) => {
+            return <List key={music.uri} data={music} select={selectMusic} deselect={deselectMusic} isSelected={true}/>
+          })
+        }
+        {isDataExist &&
+          results
+          .filter((music) => {
+            return !selectedMusic.id.includes(music.uri);
+          })
+          .map((music) => {
+            return <List key={music.uri} data={music} select={selectMusic} deselect={deselectMusic} isSelected={false}/>
+          })
+        }
+      </div>
             </div>
         </div>
     );

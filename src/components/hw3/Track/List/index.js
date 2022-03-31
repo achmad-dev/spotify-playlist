@@ -1,18 +1,31 @@
 import React from "react";
 import './app.css';
 
-const List = ({ id, title, img, artists, album}) => {
+const List = ({data, id, title, img, artists, album, select,deselect, isSelected}) => {
+
+  const handleSelect = () => {
+    select(data);
+}
+
+const handleDeselect = () => {
+    deselect(data);
+}
     return (
         <div key={id} className="table">
           <br/>
             <div>
                 <h3 className="white-text">{title}</h3>
                 <p>{artists}</p>
-                <img src={img} alt={artists}/>
+                <img className="image" src={img} alt={artists}/>
             </div>
             <div>
-             <td>{album}</td>
-             <button>Select</button>
+             <p>{album}</p>
+            </div>
+            <div>
+            {isSelected
+                ? <button onClick={handleDeselect} className='btn select'>Deselect</button>
+                : <button onClick={handleSelect} className='btn select'>Select</button>
+            }
             </div>
           <br/>
         </div>
