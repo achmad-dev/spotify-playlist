@@ -1,0 +1,12 @@
+.btn {
+  border-radius: 25px;
+  cursor: pointer;
+  border: 0;
+  color: blue;
+  background-color: purple;
+  padding: 1em 2em;
+}
+
+.btn:hover {
+  opacity: 0.5;
+}
