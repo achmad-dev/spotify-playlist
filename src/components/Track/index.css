@@ -1,0 +1,54 @@
+.card {
+  width: 230px;
+  border: 1px solid #EEEEEE;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 7px 7px 30px -8px rgba(0, 0, 0, .3);
+}
+
+.card:hover .card__image > img {
+  transform: scale(1);
+}
+
+.card__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.card__image > img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+
+}
+
+.card__data {
+  padding: 12px;
+}
+
+.card__content {
+  height: 67px;
+}
+
+.card__title {
+  font-size: 1rem;
+  margin-top: 4px;
+}
+
+.card__artist {
+  color: var(--gray);
+  margin-top: 4px;
+}
+
+.card .card__action {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
