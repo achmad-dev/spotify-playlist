@@ -1,0 +1,10 @@
+.search-container form {
+  display: flex;
+}
+.input {
+  color: white;
+  padding: 1em;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+}
