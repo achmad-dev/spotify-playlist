@@ -16,7 +16,7 @@ const Pages = () => {
     const payload = callback();
     if (payload) {
       setAuth(payload);
-      getProfile(auth.access_token).then((respond) => {
+      getProfile(payload.access_token).then((respond) => {
         setUserData(respond);
       });
     }

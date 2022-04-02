@@ -13,16 +13,19 @@ const generateRandomString = (length) => {
 
 
 const redirect = () => {
-  const scope = "user-read-private user-read-email";
+  const url = "https://accounts.spotify.com/authorize";
+  const scope = "user-read-private playlist-modify-private user-read-email";
   const state = generateRandomString(16);
-  let url = "https://accounts.spotify.com/authorize";
-  url += "?response_type=token";
-  url += `&client_id=${encodeURIComponent(ClientId)}`;
-  url += `&scope=${encodeURIComponent(scope)}`;
-  url += `&redirect_uri=${encodeURIComponent(RedirectUrl)}`;
-  url += `&state=${encodeURIComponent(state)}`;
+  const paramsData = {
+  response_type: "token",
+  client_id: ClientId,
+  redirect_uri: RedirectUrl,
+  state,
+  scope,
+};
+const params = new URLSearchParams(paramsData).toString();
   //redirect...
-  window.location = url;
+  window.location = `${url}?${params}`;
 };
 
 const callback = () => {
@@ -33,7 +36,6 @@ const callback = () => {
   while ((e = r.exec(q))) {
     hashParams[e[1]] = decodeURIComponent(e[2]);
   }
-  console.log(hashParams);
   return hashParams.access_token && hashParams;
 };
 
