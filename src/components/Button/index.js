@@ -1,9 +1,9 @@
 import './style.css';
 
-const Button = ({children, ...props}) => {
+const Button = ({leftIcon, children, ...props}) => {
   return (
     <button className='btn' {...props}>
-      {children}
+      {leftIcon} {children}
     </button>
   );
 };

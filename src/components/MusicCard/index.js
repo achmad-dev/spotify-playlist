@@ -20,7 +20,7 @@ const MusicCard = ({data}) => {
         <Link href={album.external_urls.spotify}>
           <img
             className='albumImg'
-            src={album.images[0].url}
+            src={album.images[1].url}
             alt={album.name}
             />
           </Link>
@@ -35,7 +35,11 @@ const MusicCard = ({data}) => {
             </h5>
           </div>
           <div>
-            <Button>Select</Button>
+            <Button
+             onClick={() => {
+             console.log(data.id);
+             }}
+            >Select</Button>
           </div>
         </div>
     </div>
