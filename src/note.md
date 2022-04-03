@@ -1,4 +1,9 @@
-#for this homework
-catatan untuk homework yang ini saya mencontek beberapa bagian tutorial https://dev.to/myogeshchavan97/how-to-create-a-spotify-music-search-app-in-react-328m
-dan https://www.youtube.com/watch?v=G_WFk4wg9fk dan beberapa tutorial lain(lupa linknya hiks)
-termasuk beberapa artikel lain . beberapa kode yang saya pakai adalah milik pembuat masing-masing
+#for this homework ie from module 3
+i use/and learn code from various tutorial from github,dev.to , and youtube
+like https://dev.to/wolzcodelife/how-to-build-a-music-playlist-with-react-spotify-and-fauna-40k6
+
+https://www.youtube.com/watch?v=u_d6NmpEBh0
+
+and others who may i din't remember the link
+
+i hope i can get more ilmu from this program gigih module and get my dream job as programmer
