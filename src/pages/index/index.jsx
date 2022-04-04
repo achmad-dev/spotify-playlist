@@ -5,6 +5,7 @@ import initData from '../../simple/data';
 import Main from '../../layout/main/index';
 import Navbar from "../../components/navbar";
 import {getProfile, getSearchTrack} from '../../lib/spotify';
+import { useDispatch } from "react-redux";
 
 
 const Pages = () => {
@@ -17,7 +18,7 @@ const Pages = () => {
     if (payload) {
       setAuth(payload);
       getProfile(payload.access_token).then((respond) => {
-        setUserData(respond);
+        useDispatch(setUserData(respond));
       });
     }
   }, []);

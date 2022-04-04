@@ -24,7 +24,7 @@ const Index = () => {
     const options = {
       q: query,
       type: "track",
-      limit: 12,
+      limit: 20,
     };
     setIsloading(true);
     getSearchTrack(auth.access_token, options).then((res) => {
