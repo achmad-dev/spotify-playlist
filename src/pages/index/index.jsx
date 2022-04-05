@@ -6,6 +6,7 @@ import Main from '../../layout/main/index';
 import Navbar from "../../components/navbar";
 import {getProfile, getSearchTrack} from '../../lib/spotify';
 import { useDispatch, useSelector } from "react-redux";
+import SpotifyPlayer from 'react-spotify-web-playback';
 
 
 const Pages = () => {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import List from "../../components/hw3/Track/List"
-
+import SpotifyPlayer from 'react-spotify-web-playback';
 
 
 function SearchPage() {
@@ -92,6 +92,7 @@ function SearchPage() {
                 img={data.album.images[0].url}
                 artists={data.artists[0].name}
                 album={data.album.name}
+                <SpotifyPlayer token={token} uris={data.uri} />
 
             />
         ))

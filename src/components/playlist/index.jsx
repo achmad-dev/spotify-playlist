@@ -5,6 +5,8 @@ import Button from "../button";
 import ModalPlaylist from "../modal-create-playlist";
 import MusicCard from "../music-card";
 import toast from "react-hot-toast";
+import SpotifyPlayer from 'react-spotify-web-playback';
+
 const Playlist = ({ data, userData }) => {
   const {
     selectedTrack,
@@ -35,12 +37,23 @@ const Playlist = ({ data, userData }) => {
   return (
     <div className="playlistContainer">
       {data.map((music) => (
+      <>
         <MusicCard
           key={music.id}
           data={music}
           handleSelect={handleSelect}
           isSelected={checkSelected(music.uri)}
         />
+        <SpotifyPlayer token={access_token} uris={music.uri} styles={{
+    activeColor: '#fff',
+    bgColor: 'black',
+    color: 'blue',
+    loaderColor: '#fff',
+    sliderColor: '#1cb954',
+    trackArtistColor: '#ccc',
+    trackNameColor: '#fff',
+  }} />
+      </>
       ))}
 
       <ModalPlaylist

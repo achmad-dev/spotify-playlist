@@ -14,10 +14,9 @@ const generateRandomString = (length) => {
   return result;
 };
 
-
 const redirect = () => {
   const url = "https://accounts.spotify.com/authorize";
-  const scope = "user-read-private playlist-modify-private user-read-email";
+  const scope = "user-read-private playlist-modify-private user-read-email streaming user-read-email streaming user-read-email user-read-private user-read-playback-state";
   const state = generateRandomString(16);
   const paramsData = {
     response_type: "token",

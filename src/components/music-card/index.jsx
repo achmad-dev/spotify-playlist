@@ -4,6 +4,7 @@ import "./style.css";
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import Typography from '@mui/material/Typography';
+import SpotifyPlayer from 'react-spotify-web-playback';
 const MusicCard = ({ data, isSelected, handleSelect }) => {
   const { album, artists, external_urls, name } = data;
   const artistText = artists.map((artist, idx) => {
