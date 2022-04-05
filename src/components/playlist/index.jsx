@@ -47,11 +47,11 @@ const Playlist = ({ data, userData }) => {
         <SpotifyPlayer token={access_token} uris={music.uri} styles={{
     activeColor: '#fff',
     bgColor: 'black',
-    color: 'blue',
+    color: 'white',
     loaderColor: '#fff',
     sliderColor: '#1cb954',
-    trackArtistColor: '#ccc',
-    trackNameColor: '#fff',
+    trackArtistColor: 'white',
+    trackNameColor: 'white',
   }} />
       </>
       ))}
