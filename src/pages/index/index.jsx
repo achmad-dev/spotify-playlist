@@ -5,14 +5,14 @@ import initData from '../../simple/data';
 import Main from '../../layout/main/index';
 import Navbar from "../../components/navbar";
 import {getProfile, getSearchTrack} from '../../lib/spotify';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 
 const Pages = () => {
   const [trackList, setTrakList] = useState(initData);
   const [ auth, setAuth ] = useState(false);
   const [userData, setUserData] = useState({});
-  useEffect(() => {
+ useSelector(useEffect(() => {
     callback();
     const payload = callback();
     if (payload) {
@@ -21,7 +21,7 @@ const Pages = () => {
         useDispatch(setUserData(respond));
       });
     }
-  }, []);
+  }, []));
   const handleSearch = (query) => {
     const options = {
       q: query,
