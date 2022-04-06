@@ -34,21 +34,21 @@ const Auth = () => {
         //redirect...
         window.location = `${url}?${params}`;
     }
-
-    // make a function to decode hash param from URL callback
+    
+    //make a function to decode hash param from URL callback return the response or undefined
     const callback = () => {
         let hashParams = {};
         let e,
-            r = /([^&;=]+)=?([^&;]*)/g,
-            q = window.location.hash.substring(1);
+           r = /([^&;=]+)=?([^&;]*)/g,
+           q = window.location.hash.substring(1);
         while ((e = r.exec(q))) {
             hashParams[e[1]] = decodeURIComponent(e[2]);
         }
         return hashParams.access_token && hashParams;
-    }
+    };
 
-    // return callback and redirect functions and isAuthenticated , accessToken and user data
+    //return the functions and isAuthenticated, accessToken, user
     return { redirect, callback, isAuthenticated, accessToken, user: data };
-}
-
+};
+//export the Auth function
 export { Auth };
