@@ -9,8 +9,10 @@ import { useHistory } from "react-router-dom";
 
 //make home component
 const Home = () => {
+    //use auth hook
     const { isAuthenticated, callback } = Auth();
     const dispatch = useDispatch();
+    //use history hook as history
     const history = useHistory();
     useEffect(() => {
         //check if user not authenticated then read access_token from hash url
@@ -23,6 +25,7 @@ const Home = () => {
             dispatch(storeUserData(res));
             });
         }
+        //if authenticated, redirect to create playlist page
         } else if (isAuthenticated) {
         history.push("/create-playlist");
         }
