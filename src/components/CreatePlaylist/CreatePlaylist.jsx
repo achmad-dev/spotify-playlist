@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createPlaylistStart } from '../../containers/Playlists/playlistsActions';
 // styles
-import {
+/*import {
   ModalContainer,
   ModalDialog,
   ModalCross,
@@ -16,9 +16,15 @@ import {
   ModalCrossContainer,
   ModalButtonsContainer,
   ModalButtonOutlineText,
-} from './createPlaylistStyles';
+} from './createPlaylistStyles'; */
+import {Form, Button, InputTitle, Input , Div} from './createPlaylistStyles';
 import { ModalsContext } from '../ModalsContext/ModalsContextContainer';
-
+//<ModalButtonsContainer>
+//<ModalButtonOutline
+//onClick={() => createPlaylist.setIsVisible(false)}
+//>
+//<ModalButtonOutlineText>Cancel</ModalButtonOutlineText>
+//</ModalButtonOutline>
 const CreatePlaylist = () => {
   const { user } = useSelector(({ auth }) => auth);
 
@@ -37,32 +43,42 @@ const CreatePlaylist = () => {
   };
 
   return createPlaylist.isVisible ? (
-    <ModalDialog>
-      <ModalContainer>
-        <ModalCrossContainer onClick={() => createPlaylist.setIsVisible(false)}>
-          <ModalCross stroke='#fff' width={52} height={52} />
-        </ModalCrossContainer>
-        <ModalTitle>Create new playlist</ModalTitle>
-
-        <ModalLabel>
-          <ModalInputTitle>Playlist Name</ModalInputTitle>
-          <ModalInput
-            type='text'
-            placeholder='New Playlist'
-            onChange={e => setValue(e.target.value.trim())}
-          />
-        </ModalLabel>
-
-        <ModalButtonsContainer>
-          <ModalButtonOutline
-            onClick={() => createPlaylist.setIsVisible(false)}
-          >
-            <ModalButtonOutlineText>Cancel</ModalButtonOutlineText>
-          </ModalButtonOutline>
-          <ModalButton onClick={handleCreatePlaylist}>Create</ModalButton>
-        </ModalButtonsContainer>
-      </ModalContainer>
-    </ModalDialog>
+    <div className='form'>
+    <Form>
+            <div className="form__content">
+                <div className="form__header">
+                    <title className="form__title">Create Playlist</title>
+                    <h2 className='title'>Create Playlist</h2>
+                </div>
+                <div className="form__body">
+                    <Div className="title">
+                        <InputTitle htmlFor="title"><strong><b>Title</b></strong></InputTitle>
+                        <Input
+                            className='input'
+                            minLength={10}
+                            type="text" 
+                            name='title' 
+                            onChange={e => setValue(e.target.value.trim())}
+                            required 
+                        />
+                    </Div>
+                    <Div className="desc">
+                        <InputTitle htmlFor="description"><strong><b>Description</b></strong></InputTitle>
+                        <Input
+                            className='input'
+                            type="text" 
+                            name='description' 
+                            onChange={e => setValue(e.target.value.trim())}  
+                        />
+                    </Div>
+                </div>
+                <div className="form__footer">
+                    <Button className='cancel' onClick={() => createPlaylist.setIsVisible(false)}>Cancel</Button>
+                    <Button className="submit" onClick={handleCreatePlaylist}>Create</Button>
+                </div>
+            </div>
+        </Form>
+    </div>
   ) : null;
 };
 
