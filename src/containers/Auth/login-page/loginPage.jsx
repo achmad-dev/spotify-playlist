@@ -1,12 +1,12 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-import Login from '../Login';
+import authorize from '../../../utils/authorize';
 import { Div } from './loginPageStyles';
 
 const LoginPage = () => {
     return (
         <Div>
-            <Button onClick={Login}>Login with Spotify</Button>
+            <Button onClick={authorize}>Login with Spotify</Button>
         </Div>
     )
 };
