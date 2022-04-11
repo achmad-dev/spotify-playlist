@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Div } from "./cardStyled";
+import { Div, Image, Button } from "./cardStyled";
 
 const Card = ({ title, artist, img, toggleSelect }) => {
   const [isSelected, setIsSelected] = useState(false);
@@ -11,15 +11,15 @@ const Card = ({ title, artist, img, toggleSelect }) => {
   return (
     <Div className="Card">
       <Div className="card-wrapper">
-        <img src={img} alt={title} className="card_img" />
+        <Image src={img} alt={title} className="card_img" />
 
         <h3 className="card_album">{title}</h3>
         <h3 className="card_artist">{artist}</h3>
       </Div>
       <Div className="btn-wrapper">
-        <button className="btn-select" onClick={handleToggleSelect}>
+        <Button className="btn-select" onClick={handleToggleSelect}>
           {isSelected ? "Deselect" : "Select"}
-        </button>
+        </Button>
       </Div>
     </Div>
   );

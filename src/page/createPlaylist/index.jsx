@@ -3,6 +3,7 @@ import { useState } from "react";
 import Form from "../../Component/Form";
 import Card from '../../Component/Card';
 import styled from 'styled-components';
+import { ColumnStyle, FlexStyle } from './style';
 
 const Div = styled.div`
   justify-content: center;
@@ -41,8 +42,10 @@ const CreatePlayList = () =>{
           <Div className='search-bar'>
             <Search  onSuccess={(tracks) => onSuccessSearch(tracks)}/>
           </Div>
-          <Div className='songs'>
+          <div className={ColumnStyle}>
             {tracks.map(track => (
+            <div className={FlexStyle}>
+              
               <Card
                 key={track.id}
                 img = {track.album.images[0].url}
@@ -50,8 +53,9 @@ const CreatePlayList = () =>{
                 artists ={track.artists[0].name}
                 toggleSelect={() => toggleSelect(track)}
               />
+            </div>
             ))}
-          </Div>
+          </div>
         </Div>
     )
 }
