@@ -22,7 +22,7 @@ import Artist from '../Artist/Artist';
 import Album from '../Album/Album';
 import Track from '../Track/Track';
 import ModalsContextContainer from '../../components/ModalsContext/ModalsContextContainer';
-import { useSelector } from 'react-redux';
+//import { useSelector } from 'react-redux';
 
 function AppRoute({ component: Component, ...rest }) {
   //const { token } = useSelector(({ auth }) => auth.token);
