@@ -3,7 +3,7 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import GlobalStyle from '../../globalStyles';
 import { GridContainer, SectionContainer } from './appStyles';
 // components
-import Login from '../Auth/Login';
+import LoginPage from '../Auth/login-page/loginPage';
 import User from '../User/User';
 import Dashboard from '../Dashboard/Dashboard';
 import Navbar from '../../components/Navbar/Navbar';
@@ -46,7 +46,7 @@ export default () => (
         >
           <Navbar />
           <Switch>
-            <Route path='/' component={Login} exact />
+            <Route path='/' component={LoginPage} exact />
             <Route path='/app' component={Dashboard} exact />
             <Route path='/app/user/:name' component={User} exact />
             <Route path='/app/search' component={Search} exact />
