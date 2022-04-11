@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import config from "../../lib/config";
 import { login } from "../../reducer/authReducer";
 import Button from '@mui/material/Button';
-
+import { Div } from "./button";
 
 const Login =()=>{
     const dispatch = useDispatch();
@@ -39,7 +39,7 @@ const Login =()=>{
 
         setUserProfile();
       }
-    }, []);
+    }, [dispatch, history]);
 
     const generateSpotifyLinkAuthorize=()=>{
 
@@ -48,11 +48,11 @@ const Login =()=>{
         return`https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=http://localhost:3000/redirect&state=${state}&scope=${config.SPOTIFY_SCOPE}`
       }
     return(
-      <div className="auth-link">
+      <Div className="auth-link">
         <Button variant="contained" href={generateSpotifyLinkAuthorize()}>
          Login
         </Button>
-      </div>
+      </Div>
     )
 }
 export default Login;

@@ -2,6 +2,13 @@ import Search from '../../Component/Search'
 import { useState } from "react";
 import Form from "../../Component/Form";
 import Card from '../../Component/Card';
+import styled from 'styled-components';
+
+const Div = styled.div`
+  justify-content: center;
+  align-items: center;
+  `;
+
 
 const CreatePlayList = () =>{
     const [tracks, setTracks] = useState([]);
@@ -29,12 +36,12 @@ const CreatePlayList = () =>{
       }
 
     return(
-        <div className="home">
+        <Div className="home">
             <Form  uriTracks={selected}/>
-          <div className='search-bar'>
+          <Div className='search-bar'>
             <Search  onSuccess={(tracks) => onSuccessSearch(tracks)}/>
-          </div>
-          <div className='songs'>
+          </Div>
+          <Div className='songs'>
             {tracks.map(track => (
               <Card
                 key={track.id}
@@ -44,8 +51,8 @@ const CreatePlayList = () =>{
                 toggleSelect={() => toggleSelect(track)}
               />
             ))}
-          </div>
-        </div>
+          </Div>
+        </Div>
     )
 }
 

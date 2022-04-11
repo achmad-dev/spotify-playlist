@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { addTracksToPlaylist, createPlaylist } from '../../lib/fetchApi';
+import { Div, Text, Button, Input } from './formStyled';
 
 
 const sendFormNetworkCall = (data) => console.log(data);
@@ -43,14 +44,14 @@ const Form = ({  uriTracks }) =>{
 
     return(
         <form className="form" onSubmit={handleForm}>
-            <div className="form__content">
+            <Div className="form__content">
                 <div className="form__header">
-                    <h4 className="form__title">Create Playlist</h4>
+                    <Text className="form__title">Create Playlist</Text>
                 </div>
                 <div className="form__body">
                     <div className="title">
-                        <p htmlFor="title">Title</p>
-                        <input
+                        <Text htmlFor="title">Title</Text>
+                        <Input
                             className='input'
                             minLength={10}
                             type="text" 
@@ -61,8 +62,8 @@ const Form = ({  uriTracks }) =>{
                         />
                     </div>
                     <div className="desc">
-                        <p htmlFor="description">Description</p>
-                        <input
+                        <Text htmlFor="description">Description</Text>
+                        <Input
                             className='input'
                             type="text" 
                             name='description' 
@@ -72,9 +73,9 @@ const Form = ({  uriTracks }) =>{
                     </div>
                 </div>
                 <div className="form__footer">
-                    <button className="submit">Create</button>
+                    <Button className="submit">Create</Button>
                 </div>
-            </div>
+            </Div>
         </form>
     );
 

@@ -1,6 +1,8 @@
 import React, { useState}from 'react'
 import { searchTrack } from '../../lib/fetchApi';
 import { useSelector } from 'react-redux';
+import { Div, Input, Button } from './searchStyled';
+
 const Search= ({ onSuccess}) =>{
   const accessToken = useSelector((state)=>state.auth.accessToken);
 
@@ -26,14 +28,16 @@ const Search= ({ onSuccess}) =>{
 
     return (
       <form className="form-search" onSubmit={onSubmit}>
-        <input
+        <Div>
+        <Input
           type="text"
-          placeholder="Search..."
+          placeholder="Search Songs..."
           className="form-search-input"
           required
           onChange={handleInput}
         />
-        <button type="submit" className='btn-search'>Search</button>
+        <Button type="submit" className='btn-search'>Search</Button>
+        </Div>
       </form>
     )
 }
