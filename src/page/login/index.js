@@ -5,6 +5,7 @@ import config from "../../lib/config";
 import { login } from "../../reducer/authReducer";
 import Button from '@mui/material/Button';
 import { Div } from "./button";
+import { backgroundColor, spotifyColor } from "./button";
 
 const Login =()=>{
     const dispatch = useDispatch();
@@ -41,6 +42,8 @@ const Login =()=>{
       }
     }, [dispatch, history]);
 
+//<iframe width="560" height="315" src="https://www.youtube.com/embed/DCf4sykvys0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
     const generateSpotifyLinkAuthorize=()=>{
 
         const state = Date.now().toString()
@@ -48,11 +51,16 @@ const Login =()=>{
         return`https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=http://localhost:3000/redirect&state=${state}&scope=${config.SPOTIFY_SCOPE}`
       }
     return(
-      <Div className="auth-link">
+    <div className={spotifyColor}>
+      <div>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/DCf4sykvys0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    <Div className={backgroundColor}>
         <Button variant="contained" href={generateSpotifyLinkAuthorize()}>
          Login
         </Button>
       </Div>
+    </div>
     )
 }
 export default Login;

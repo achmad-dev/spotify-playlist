@@ -5,8 +5,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: grey;
-  align-items: center;
+  color: white;
+  background: linear-gradient(
+    180deg,
+    rgb(36, 36, 36) 0%,
+    #121212 54%,
+    #121212 100%
+  );
+  background-attachment: fixed;
+  position: relative;
+
 }
 .App {
   align-content: center;
