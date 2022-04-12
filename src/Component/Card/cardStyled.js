@@ -2,11 +2,18 @@ import styled from 'styled-components';
 
 export const Div = styled.div`
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     border: 1px solid black;
     border-radius: 8px;
     margin: auto;
     text-align:center;
-    background-color: bisque;
+    background: linear-gradient(
+        180deg,
+        rgb(36, 36, 36) 0%,
+        #121212 54%,
+        #121212 100%
+      );
+    color: white;
 `;
 
 export const Image = styled.img`
@@ -16,6 +23,7 @@ export const Image = styled.img`
 export const Button = styled.button`
     background-color: green;
     color: #fff;
+    width: 100%;
     border: none;
     border-radius: 5px;
     font-size: 1.5rem;

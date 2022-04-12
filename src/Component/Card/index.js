@@ -16,11 +16,9 @@ const Card = ({ title, artist, img, toggleSelect }) => {
         <h3 className="card_album">{title}</h3>
         <h3 className="card_artist">{artist}</h3>
       </Div>
-      <Div className="btn-wrapper">
         <Button className="btn-select" onClick={handleToggleSelect}>
           {isSelected ? "Deselect" : "Select"}
         </Button>
-      </Div>
     </Div>
   );
 };
