@@ -1,7 +1,8 @@
 import React, { useState}from 'react'
 import { searchTrack } from '../../lib/fetchApi';
 import { useSelector } from 'react-redux';
-import { Div, Input, Button } from './searchStyled';
+import { Div, Input} from './searchStyled';
+import Button from '@mui/material/Button';
 
 const Search= ({ onSuccess}) =>{
   const accessToken = useSelector((state)=>state.auth.accessToken);
@@ -36,8 +37,10 @@ const Search= ({ onSuccess}) =>{
           required
           onChange={handleInput}
         />
-        <Button type="submit" className='btn-search'>Search</Button>
+        <Button variant="outlined" type="submit" className='btn-search'>Search</Button>
         </Div>
+        <br/>
+        <hr/>
       </form>
     )
 }
