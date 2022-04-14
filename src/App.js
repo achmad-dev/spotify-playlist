@@ -1,18 +1,38 @@
-//import './App.css';
-//import SearchPage from './pages/Search';
-import Pages from './pages/index';
-import Navbar from './components/navbar';
-//import data from './simple/data'
-//import PlayList from './components/playlist';
-//import MusicCard from './components/MusicCard'
+import "./index.css";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import CreatePlayList from "./page/createPlaylist";
+import Login from "./page/login";
+import {useSelector} from 'react-redux';
+import styled from 'styled-components';
+const Div = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  `;
+
 function App() {
+  const isLogin = useSelector((state) => state.auth.isLogin);
+
   return (
-    <div className="App-header">
-      {/*<MusicCard data={data} />*/}
-      {/*<PlayList data={data}/>*/}
-      {/*<Navbar />*/}
-      <Pages />
-    </div>
+  <Div className='app'>
+    <Router>
+
+
+    <Switch>
+      <Route path={"/create-playlist"}>
+        {isLogin ? (
+          <CreatePlayList />
+        ):(
+          <Redirect to={"/"}/>
+      )}
+      </Route>
+      <Route path={"/"} >
+        <Login/>
+      </Route>
+    </Switch>
+
+  </Router>
+ </Div>
   );
 }
 
