@@ -43,11 +43,9 @@ const CreatePlayList = () =>{
             <Search  onSuccess={(tracks) => onSuccessSearch(tracks)}/>
           </Div>
           <div className={ColumnStyle}>
-            {tracks.map(track => (
-            <div className={FlexStyle}>
-              
+            {tracks.map((track) => (
+            <div className={FlexStyle} key={track.id}>
               <Card
-                key={track.id}
                 img = {track.album.images[0].url}
                 title = {track.name}
                 artists ={track.artists[0].name}
