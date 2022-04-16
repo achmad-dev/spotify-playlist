@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Div, Image, Button, CardInfo } from "./cardStyled";
+import { Div, Image, Button} from "./cardStyled";
 
 const Card = ({ title, artist, img, toggleSelect, duration }) => {
   const [isSelected, setIsSelected] = useState(false);
@@ -12,8 +12,8 @@ const Card = ({ title, artist, img, toggleSelect, duration }) => {
     <Div className="Card">
       <Div className="card-wrapper">
         <Image src={img} alt={title} className="card_img" />
-        <div className={CardInfo}>
-          <p className="card_album">{title}</p>
+        <div className='CardInfo'>
+          <p className="cardAlbum">{title}</p>
           <p>{artist}</p>
           <p>{duration} minutes</p>
         </div>
