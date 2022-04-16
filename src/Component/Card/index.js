@@ -15,7 +15,7 @@ const Card = ({ title, artist, img, toggleSelect, duration }) => {
         <div className='CardInfo'>
           <p className="cardAlbum">{title}</p>
           <p>{artist}</p>
-          <p>{duration} minutes</p>
+          <p>song duration = {duration} minutes</p>
         </div>
       </Div>
       <div>
