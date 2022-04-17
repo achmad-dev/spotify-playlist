@@ -20,12 +20,12 @@ const Form = ({  uriTracks }) =>{
         sendFormNetworkCall(form);
 
         try {
-            const responseCreatePlaylist = await createPlaylist(accessToken, userId, {
+            const responseCreatePlaylist = createPlaylist(accessToken, userId, {
               name: form.title,
               description: form.description,
             });
     
-            await addTracksToPlaylist(accessToken, responseCreatePlaylist.id, uriTracks);
+            addTracksToPlaylist(accessToken, responseCreatePlaylist.id, uriTracks);
     
             alert('Playlist created successfully');
     
