@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { addTracksToPlaylist, createPlaylist } from '../../lib/fetchApi';
 import { Div, Text, Button, Input } from './formStyled';
@@ -19,20 +19,25 @@ const Form = ({  uriTracks }) =>{
         e.preventDefault();
         sendFormNetworkCall(form);
 
-        try {
-            const responseCreatePlaylist = createPlaylist(accessToken, userId, {
-              name: form.title,
-              description: form.description,
+       try {
+            const responseCreatePlaylist = await createPlaylist(accessToken, userId, {
+                name: form.title,
+                description: form.description,
             });
-    
-            addTracksToPlaylist(accessToken, responseCreatePlaylist.id, uriTracks);
-    
-            alert('Playlist created successfully');
-    
-            setForm({ title: '', description: '' });
-          } catch (error) {
-            alert('error');
-          }
+
+            await addTracksToPlaylist(
+                accessToken,
+                responseCreatePlaylist.id,
+                uriTracks
+            );
+
+            alert("Playlist created successfully");
+
+            setForm({ title: "", description: "" });
+            } catch (error) {
+            alert("error");
+            }
+
     }
 
     const handleChange = (e) =>{
