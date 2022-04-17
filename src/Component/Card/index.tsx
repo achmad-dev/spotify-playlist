@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Div, Image, Button} from "./cardStyled";
-import { Props } from "./cardType";
+import {Props} from "./cardType";
+
 
 const Card = ({ title , artist, img, toggleSelect , duration }: Props) => {
   const [isSelected, setIsSelected] = useState(false);
