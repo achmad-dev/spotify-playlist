@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Div, Image, Button} from "./cardStyled";
-import {Props} from "./cardType";
+import {Props} from "./cardTypes";
 
 
 const Card = ({ title , artist, img, toggleSelect , duration }: Props) => {
