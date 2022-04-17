@@ -1,10 +1,10 @@
-import React, { useState}from 'react'
+import { useState }from 'react'
 import { searchTrack } from '../../lib/fetchApi';
 import { useSelector } from 'react-redux';
 import { Div, Input} from './searchStyled';
 import Button from '@mui/material/Button';
 
-const Search= ({ onSuccess}) =>{
+const Search= ({ onSuccess }) =>{
   const accessToken = useSelector((state)=>state.auth.accessToken);
 
   const [text, setText] = useState('');

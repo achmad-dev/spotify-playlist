@@ -4,6 +4,7 @@ import Form from "../../Component/Form";
 import Card from '../../Component/Card';
 import styled from 'styled-components';
 import { ColumnStyle, FlexStyle } from './style';
+import millisToMinutesAndSeconds from './timeMsConvert'
 
 const Div = styled.div`
   justify-content: center;
@@ -48,7 +49,8 @@ const CreatePlayList = () =>{
               <Card
                 img = {track.album.images[0].url}
                 title = {track.name}
-                artists ={track.artists[0].name}
+                artist ={track.artists[0].name}
+                duration = {millisToMinutesAndSeconds(track.duration_ms)}
                 toggleSelect={() => toggleSelect(track)}
               />
             </div>

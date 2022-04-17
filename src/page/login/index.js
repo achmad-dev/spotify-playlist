@@ -20,13 +20,18 @@ const Login =()=>{
         const setUserProfile = async () => {
           try {
             const requestOptions = {
-      headers: {
-        'Authorization': 'Bearer ' + accessTokenParams,
-        'Content-Type': 'application/json',
-      },
+              headers: {
+                'Authorization': 'Bearer ' + accessTokenParams,
+                'Content-Type': 'application/json',
+              },
     };
 
-    const response = await fetch(`${config.SPOTIFY_BASE_URL}/me`, requestOptions).then(data => data.json());
+    const response = fetch(`${config.SPOTIFY_BASE_URL}/me`, requestOptions).then(
+      (data) => data.json()
+      ).catch(err => {
+      console.log(err)
+      response.sendStatus(400)
+    });
           dispatch(login({
             accessToken : accessTokenParams,
             user : response,
