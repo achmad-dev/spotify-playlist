@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Div, Image, Button} from "./cardStyled";
+import { Props } from "./cardType";
 
-const Card = ({ title, artist, img, toggleSelect, duration }) => {
+const Card = ({ title , artist, img, toggleSelect , duration }: Props) => {
   const [isSelected, setIsSelected] = useState(false);
 
   const handleToggleSelect = () => {
@@ -14,8 +15,8 @@ const Card = ({ title, artist, img, toggleSelect, duration }) => {
         <Image src={img} alt={title} className="card_img" />
         <div className='CardInfo'>
           <p className="cardAlbum">{title}</p>
-          <p>{artist}</p>
-          <p>song duration = {duration} minutes</p>
+          <p>Artist: {artist}</p>
+          <p>Song duration = {duration} minutes</p>
         </div>
       </Div>
       <div>

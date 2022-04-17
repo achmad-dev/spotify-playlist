@@ -49,7 +49,7 @@ const CreatePlayList = () =>{
               <Card
                 img = {track.album.images[0].url}
                 title = {track.name}
-                artists ={track.artists[0].name}
+                artist ={track.artists[0].name}
                 duration = {millisToMinutesAndSeconds(track.duration_ms)}
                 toggleSelect={() => toggleSelect(track)}
               />
