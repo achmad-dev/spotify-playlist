@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import {css} from '@emotion/css';
 
 export const Div = styled.div`
     display: grid;
@@ -32,13 +31,4 @@ export const Button = styled.button`
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
-`;
-
-export const CardInfo = css`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    color: white;
 `;
