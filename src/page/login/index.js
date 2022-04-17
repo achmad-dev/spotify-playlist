@@ -30,7 +30,9 @@ const Login = () => {
           const response = await fetch(
             `${config.SPOTIFY_BASE_URL}/me`,
             requestOptions
-          ).then((data) => data.json());
+          ).then((data) => data.json()).catch(err => {
+            console.log(err)
+            response.sendStatus(400)});
           dispatch(
             login({
               accessToken: accessTokenParams,
