@@ -21,6 +21,7 @@
     "eslint": "^8.13.0",
     "eslint-plugin-react": "^7.29.4",
     "lodash": "^4.17.21",
+    "msw": "^0.39.2",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.2.2",
