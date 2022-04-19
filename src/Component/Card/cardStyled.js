@@ -1,4 +1,9 @@
 import styled from 'styled-components';
+import { css } from '@emotion/css';
+
+export const DivBorder = css`
+    border: 1px solid black;
+`
 
 export const Div = styled.div`
     display: grid;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Image, Button, Div } from "./cardStyled";
+import { Image, Button, Div, DivBorder } from "./cardStyled";
 import {Props} from "./cardTypes";
 
 
@@ -14,7 +14,7 @@ const Card = ({ title , artist, img, toggleSelect , duration }: Props) => {
         <Div className="Card">
           <div>
             <Image src={img} alt={title} className="card_img" />
-            <div className='CardInfo'>
+            <div className={DivBorder}>
               <p className="cardAlbum">{title}</p>
               <p>Artist: {artist}</p>
               <p>Song duration = {duration} minutes</p>
