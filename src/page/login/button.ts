@@ -6,13 +6,9 @@ export const Div = css`
 `;
 
 export const backgroundColor = css`
-  background-color: #808080;
   justify-content: center;
   display: flex;
   align-items: center;
-  &:hover {
-    background-color: black;
-  }
 `;
 
 export const spotifyColor = css`

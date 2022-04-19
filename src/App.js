@@ -3,18 +3,12 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 import CreatePlayList from "./page/createPlaylist";
 import Login from "./page/login";
 import {useSelector} from 'react-redux';
-import styled from 'styled-components';
-const Div = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  `;
 
 function App() {
   const isLogin = useSelector((state) => state.auth.isLogin);
 
   return (
-  <Div className='app'>
+  <div>
     <Router>
 
 
@@ -32,7 +26,7 @@ function App() {
     </Switch>
 
   </Router>
- </Div>
+ </div>
   );
 }
 

@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import config from "../../lib/config";
 import { login } from "../../reducer/authReducer";
 import Button from '@mui/material/Button';
-import { Div, backgroundColor, spotifyColor } from "./button";
+import { Div, backgroundColor} from "./button";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -56,16 +56,16 @@ const Login = () => {
         }
       }, [dispatch,history]);
     return(
-    <div className={spotifyColor}>
+    <div>
       <div className={Div}>
         <h1>Spotify Playlist Creator</h1>
       </div>
-      <div>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/DCf4sykvys0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      <div className={Div}>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/DCf4sykvys0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </div>
       <div className={backgroundColor}>
         <Button variant="contained" href={generateSpotifyLinkAuthorize()}>
-         Login
+         Login with Spotify
         </Button>
       </div>
     </div>

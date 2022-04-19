@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { addTracksToPlaylist, createPlaylist } from '../../lib/fetchApi';
-import { Div, Text, Button, Input } from './formStyled';
+import { Div, Text, Button, Input, ButtonDiv } from './formStyled';
 
 
 const sendFormNetworkCall = (data) => console.log(data);
@@ -77,9 +77,11 @@ const Form = ({  uriTracks }) =>{
                         />
                     </div>
                 </div>
-                <div className="form__footer">
+                <div className={ButtonDiv}>
                     <Button className="submit">Create</Button>
                 </div>
+                <hr/>
+                <br/>
             </Div>
         </form>
     );
