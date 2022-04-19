@@ -1,6 +1,5 @@
-import styled from 'styled-components';
 import {css} from '@emotion/css';
-export const Div = styled.div`
+export const Div = css`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,6 +7,12 @@ export const Div = styled.div`
 
 export const backgroundColor = css`
   background-color: #808080;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  &:hover {
+    background-color: black;
+  }
 `;
 
 export const spotifyColor = css`
