@@ -6,10 +6,10 @@ export class Event extends Component {
         return (
             <div className={DivStyle}>
               <li className="event">
-                <h3>{this.props.name}</h3>
+                <h2>{this.props.name}</h2>
                 <p>{this.props.venue}</p>
                 <p>{this.props.date} {this.props.time == null ? '' : this.props.time}</p>
-                <p>{this.props.city}</p>
+                <p><b>{this.props.city}</b></p>
               </li>
             </div>
         )
