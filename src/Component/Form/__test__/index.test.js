@@ -1,4 +1,4 @@
-import { render, screen, cleanup } from '@testing-library/react';
+import { render, screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Form } from '../index';
 import { store } from '../../../store/store';
@@ -11,12 +11,6 @@ test('it should render login button properly', () => {
     <Form />
   </Provider>);
 
-  
-    
-  expect(screen.getByLabelText('title')).toBeInTheDocument();
-  expect(screen.getByLabelText('description')).toBeInTheDocument();
-  expect(screen.getByText('Create')).toBeInTheDocument();
-  
   const titleInput = screen.getByLabelText('title');
   const descriptionInput = screen.getByLabelText('description');
   
@@ -25,5 +19,8 @@ test('it should render login button properly', () => {
   
   expect(titleInput).toHaveValue('Title');
   expect(descriptionInput).toHaveValue('Description');
+  expect(screen.getByLabelText('title')).toBeInTheDocument();
+  expect(screen.getByLabelText('description')).toBeInTheDocument();
+  expect(screen.getByText('Create')).toBeInTheDocument();
     
 });
