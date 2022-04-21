@@ -3,7 +3,7 @@ import Event from './Event';
 import { Div, Input} from '../../Component/Form/formStyled';
 import { Button } from '@mui/material';
 
-export class Songkick extends Component {
+export default class SearchConcert extends Component {
      
     state = {
         cityID: '',
@@ -89,5 +89,3 @@ export class Songkick extends Component {
         )
     }
 }
-
-export default Songkick

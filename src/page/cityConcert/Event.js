@@ -1,10 +1,9 @@
 import { Component } from 'react'
-import { DivStyle } from './style';
 
 export class Event extends Component {
     render() {
         return (
-            <div className={DivStyle}>
+            <div>
               <li className="event">
                 <h2>{this.props.name}</h2>
                 <p>{this.props.venue}</p>
