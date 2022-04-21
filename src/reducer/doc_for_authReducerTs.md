@@ -1,12 +1,13 @@
 # documentation
 # step explanation
 
-
-
-
-
-
-
+1. Create a new slice called authSlice.
+2. Create a new reducer called login. This reducer will be the action creator.
+3. Create a new action called login which will be used to dispatch this reducer.
+4. The reducer receives the state and the action.
+5. We check the action.type property. If it is equal to login, we update the state.
+6. We set the accessToken and user properties.
+7. We return the state
 
 # code explanation
 1. createSlice() is a function that takes as input the name of our slice, 

@@ -3,8 +3,9 @@ import { useState } from "react";
 import Form from "../../Component/Form";
 import Card from '../../Component/Card';
 import styled from 'styled-components';
-import { ColumnStyle, FlexStyle } from './style';
+import { ColumnStyle} from './style';
 import millisToMinutesAndSeconds from './timeMsConvert'
+import UserProfile from '../../Component/User/userProfile';
 
 const Div = styled.div`
   justify-content: center;
@@ -40,6 +41,10 @@ const Div = styled.div`
     };
 
     return(
+      <div>
+        <div>
+          <UserProfile />
+        </div>
         <Div className="home">
             <Form  uriTracks={selected}/>
           <Div className='search-bar'>
@@ -47,7 +52,7 @@ const Div = styled.div`
           </Div>
           <div className={ColumnStyle}>
             {tracks.map((track) => (
-            <div className={FlexStyle} key={track.id}>
+            <div key={track.id}>
               <Card
                 img = {track.album.images[0].url}
                 title = {track.name}
@@ -59,6 +64,7 @@ const Div = styled.div`
             ))}
           </div>
         </Div>
+      </div>
     )
 }
 

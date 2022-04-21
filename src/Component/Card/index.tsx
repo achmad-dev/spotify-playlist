@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Div, Image, Button} from "./cardStyled";
+import { Image, Button, Div, DivBorder } from "./cardStyled";
 import {Props} from "./cardTypes";
 
 
@@ -11,21 +11,21 @@ const Card = ({ title , artist, img, toggleSelect , duration }: Props) => {
     toggleSelect();
   };
   return (
-    <Div className="Card">
-      <Div className="card-wrapper">
-        <Image src={img} alt={title} className="card_img" />
-        <div className='CardInfo'>
-          <p className="cardAlbum">{title}</p>
-          <p>Artist: {artist}</p>
-          <p>Song duration = {duration} minutes</p>
-        </div>
-      </Div>
-      <div>
-        <Button className="btn-select" onClick={handleToggleSelect}>
-          {isSelected ? "Deselect" : "Select"}
-        </Button>
-      </div>
-    </Div>
+        <Div className="Card">
+          <div>
+            <Image src={img} alt={title} className="card_img" />
+            <div className={DivBorder}>
+              <p className="cardAlbum">{title}</p>
+              <p>Artist: {artist}</p>
+              <p>Song duration = {duration} minutes</p>
+            </div>
+          </div>
+          <div>
+            <Button className="btn-select" onClick={handleToggleSelect}>
+              {isSelected ? "Deselect" : "Select"}
+            </Button>
+          </div>
+        </Div>
   );
 };
 export default Card;

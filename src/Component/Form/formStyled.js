@@ -1,10 +1,16 @@
 import styled from 'styled-components';
-
+import { css } from '@emotion/css';
 export const Div = styled.div`
     display: grid;
     justify-content: center;
     align-items: center;
     border: 1px solid black;
+`;
+
+export const ButtonDiv = css`
+    display: grid;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const Text = styled.p`
