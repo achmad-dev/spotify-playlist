@@ -14,8 +14,9 @@ const Login = () => {
     const generateSpotifyLinkAuthorize=()=>{
 
         const state = Date.now().toString()
+        const redirect_url = process.env.REACT_APP_REDIRECT_URL;
         const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID
-        return`https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=http://localhost:3000/redirect&state=${state}&scope=${config.SPOTIFY_SCOPE}`
+        return`https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${redirect_url}=${state}&scope=${config.SPOTIFY_SCOPE}`
       }
       useEffect(() => {
         const accessTokenParams = new URLSearchParams(window.location.hash).get(
