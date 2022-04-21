@@ -41,4 +41,4 @@ const SidebarItem = ({ icon, children, to }: {
   )
 }
 
-export default Sidebar
+export default Sidebar;

@@ -3,28 +3,29 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 import CreatePlayList from "./page/createPlaylist";
 import Login from "./page/login";
 import {useSelector} from 'react-redux';
-import styled from 'styled-components';
-const Div = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  `;
+import Sidebar from "./Component/Navbar";
+import SearchConcert from "./page/cityConcert/songkick";
 
 function App() {
   const isLogin = useSelector((state) => state.auth.isLogin);
 
   return (
-  <Div className='app'>
+  <div className='app'>
     <Router>
 
 
     <Switch>
       <Route path={"/create-playlist"}>
+        <Sidebar />
         {isLogin ? (
           <CreatePlayList />
         ):(
           <Redirect to={"/"}/>
       )}
+      </Route>
+      <Route path="/search-concert">
+        <Sidebar />
+        <SearchConcert />
       </Route>
       <Route path={"/"} >
         <Login/>
@@ -32,7 +33,7 @@ function App() {
     </Switch>
 
   </Router>
- </Div>
+ </div>
   );
 }
 
