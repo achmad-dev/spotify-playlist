@@ -7,11 +7,11 @@ import { IconType } from 'react-icons'
 const Sidebar = () => {
   return (
     <Flex as="nav" direction="column" m={2} p={2}>
-      <SidebarItem to="/search-concert" icon={HiSparkles}>
-        Search Concert
-      </SidebarItem>
       <SidebarItem to="/create-playlist" icon={MdLibraryMusic}>
         Create Playlist
+      </SidebarItem>
+      <SidebarItem to="/search-concert" icon={HiSparkles}>
+        Search Concert
       </SidebarItem>
     </Flex>
   )
