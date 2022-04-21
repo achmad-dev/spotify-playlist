@@ -78,7 +78,7 @@ export default class SearchConcert extends Component {
                     <Input type='text' onChange={this.handleChange} 
                     value={this.state.term} placeholder="type a city name..."
                     id="userInput" />
-                    <Button id="submit-btn">search</Button>
+                    <Button variant="outlined" type="submit" className='btn-search'>search</Button>
                 </form>
                 <div className={DivStyle}>
                     <p id="loading">{this.state.loading && "Loading..."}</p>
