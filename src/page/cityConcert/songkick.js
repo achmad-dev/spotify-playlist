@@ -59,8 +59,8 @@ export default class SearchConcert extends Component {
     };
     
     render() {
-        const firstTwelve = this.state.eventData.resultsPage && this.state.eventData.resultsPage.results.event.filter((event, index) => {
-            return index < 20;
+        const earlyTwenties = this.state.eventData.resultsPage && this.state.eventData.resultsPage.results.event.filter((event, index) => {
+            return index < 24;
         }).map((event, index) => {
             return (
                 <Event name={event.displayName} 
@@ -84,7 +84,7 @@ export default class SearchConcert extends Component {
                     <p id="loading">{this.state.loading && "Loading..."}</p>
                     <h2 id="cityName">{this.state.city}</h2>
                     <ul id="list">
-                        {this.state.eventData.resultsPage && firstTwelve}
+                        {this.state.eventData.resultsPage && earlyTwenties}
                     </ul>
                 </div>
             </div>
