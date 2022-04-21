@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Event from './Event';
-import { Div, Input} from '../../Component/Form/formStyled';
+import { Input } from '../../Component/Form/formStyled';
+import { DivStyle } from './style';
 import { Button } from '@mui/material';
 
 export default class SearchConcert extends Component {
@@ -59,10 +60,9 @@ export default class SearchConcert extends Component {
     
     render() {
         const firstTwelve = this.state.eventData.resultsPage && this.state.eventData.resultsPage.results.event.filter((event, index) => {
-            return index < 12;
+            return index < 20;
         }).map((event, index) => {
             return (
-
                 <Event name={event.displayName} 
                 venue={event.venue.displayName} 
                 date={event.start.date} 
@@ -73,19 +73,21 @@ export default class SearchConcert extends Component {
         });
 
         return (
-            <Div id="main">
+            <div id="main">
                 <form onSubmit={this.handleSubmit}>
                     <Input type='text' onChange={this.handleChange} 
                     value={this.state.term} placeholder="type a city name..."
                     id="userInput" />
                     <Button id="submit-btn">search</Button>
                 </form>
-                <p id="loading">{this.state.loading && "Loading..."}</p>
-                <h2 id="cityName">{this.state.city}</h2>
-                <ul id="list">
-                    {this.state.eventData.resultsPage && firstTwelve}
-                </ul>
-            </Div>
+                <div className={DivStyle}>
+                    <p id="loading">{this.state.loading && "Loading..."}</p>
+                    <h2 id="cityName">{this.state.city}</h2>
+                    <ul id="list">
+                        {this.state.eventData.resultsPage && firstTwelve}
+                    </ul>
+                </div>
+            </div>
         )
     }
 }

@@ -16,20 +16,3 @@ body {
   position: relative;
 
 }
-.App {
-  align-content: center;
-}
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.form-input{
-margin: 400px 100px 100px 700px;
-
-
-}
-.card_img{
-width: 100%;
-
-}
