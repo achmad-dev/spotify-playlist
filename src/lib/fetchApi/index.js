@@ -4,42 +4,51 @@ import config from "../config";
 export const searchTrack = async (query, accessToken) => {
   const requestOptions = {
     headers: {
-      'Authorization': 'Bearer ' + accessToken,
-      'Content-Type': 'application/json',
+      Authorization: "Bearer " + accessToken,
+      "Content-Type": "application/json",
     },
-  }; 
+  };
 
-  const response = await axios.get(`${config.SPOTIFY_BASE_URL}/search?type=track&q=${query}`, requestOptions);
+  const response = await axios.get(
+    `${config.SPOTIFY_BASE_URL}/search?type=track&q=${query}`,
+    requestOptions
+  );
 
   return response.data;
-  
-}//fetch spotify track data and called in search-bar component
+}; //fetch spotify track data and called in search-bar component
 
 export const getUserProfile = async (accessToken) => {
   const requestOptions = {
     headers: {
-      'Authorization': 'Bearer ' + accessToken,
-      'Content-Type': 'application/json',
+      Authorization: "Bearer " + accessToken,
+      "Content-Type": "application/json",
     },
   };
 
-  const response = await axios.get(`${config.SPOTIFY_BASE_URL}/me`, requestOptions);
+  const response = await axios.get(
+    `${config.SPOTIFY_BASE_URL}/me`,
+    requestOptions
+  );
 
   return response.data;
-}//fetch user profile data and called in home
+}; //fetch user profile data and called in home
 
-export const createPlaylist = async (accessToken, userId, { name, description }) => {
+export const createPlaylist = async (
+  accessToken,
+  userId,
+  { name, description }
+) => {
   const data = JSON.stringify({
     name,
     description,
     public: false,
     collaborative: false,
-  })
-  
+  });
+
   const requestOptions = {
     headers: {
-      'Authorization': 'Bearer ' + accessToken,
-      'Content-Type': 'application/json',
+      Authorization: "Bearer " + accessToken,
+      "Content-Type": "application/json",
     },
   };
 
@@ -50,17 +59,17 @@ export const createPlaylist = async (accessToken, userId, { name, description })
   );
 
   return response.data;
-}
+};
 
 export const addTracksToPlaylist = async (accessToken, playlistId, uris) => {
   const data = JSON.stringify({
-    uris
+    uris,
   });
 
   const requestOptions = {
     headers: {
-      'Authorization': 'Bearer ' + accessToken,
-      'Content-Type': 'application/json',
+      Authorization: "Bearer " + accessToken,
+      "Content-Type": "application/json",
     },
   };
 
@@ -71,4 +80,4 @@ export const addTracksToPlaylist = async (accessToken, playlistId, uris) => {
   );
 
   return response.data;
-}
+};

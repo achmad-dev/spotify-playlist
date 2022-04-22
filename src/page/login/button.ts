@@ -1,4 +1,4 @@
-import {css} from '@emotion/css';
+import { css } from "@emotion/css";
 export const Div = css`
   display: flex;
   justify-content: center;
