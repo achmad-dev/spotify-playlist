@@ -3,8 +3,10 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 import CreatePlayList from "./page/createPlaylist";
 import Login from "./page/login";
 import {useSelector} from 'react-redux';
-import Navbar from "./Component/Navbar";
 import SearchConcert from "./page/cityConcert/songkick";
+import ResponsiveAppBar from "./Component/Navbar/navbar";
+import UserProfilePage from "./page/userProfile/userProfile";
+
 function App() {
   const isLogin = useSelector((state) => state.auth.isLogin);
 
@@ -13,7 +15,7 @@ function App() {
     <Router>
     <Switch>
       <Route path={"/create-playlist"}>
-        <Navbar />
+        <ResponsiveAppBar />
         {isLogin ? (
           <CreatePlayList />
         ):(
@@ -21,8 +23,12 @@ function App() {
       )}
       </Route>
       <Route path="/search-concert">
-        <Navbar />
+        <ResponsiveAppBar />
         <SearchConcert />
+      </Route>
+      <Route path="/user-profile">
+        <ResponsiveAppBar />
+        <UserProfilePage />
       </Route>
       <Route path={"/"} >
         <Login/>
