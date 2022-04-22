@@ -11,4 +11,6 @@ body {
     #121212 54%,
     #121212 100%
   );
+  background-attachment: fixed;
+  position: relative;
 }
