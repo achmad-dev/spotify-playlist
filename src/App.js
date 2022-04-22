@@ -5,6 +5,8 @@ import Login from "./page/login";
 import {useSelector} from 'react-redux';
 import Navbar from "./Component/Navbar";
 import SearchConcert from "./page/cityConcert/songkick";
+import ResponsiveAppBar from "./Component/Navbar/alternative";
+
 function App() {
   const isLogin = useSelector((state) => state.auth.isLogin);
 
@@ -13,6 +15,7 @@ function App() {
     <Router>
     <Switch>
       <Route path={"/create-playlist"}>
+        <ResponsiveAppBar />
         <Navbar />
         {isLogin ? (
           <CreatePlayList />
@@ -21,6 +24,7 @@ function App() {
       )}
       </Route>
       <Route path="/search-concert">
+        <ResponsiveAppBar />
         <Navbar />
         <SearchConcert />
       </Route>
