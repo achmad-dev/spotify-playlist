@@ -33,7 +33,7 @@ const Search= ({ onSuccess }) =>{
         <Input
           type="text"
           placeholder="Search Songs..."
-          className="form-search-input"
+          className="search-input"
           required
           onChange={handleInput}
         />
