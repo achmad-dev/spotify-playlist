@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { ProfileStyle } from "./style";
+import { Avatar } from "@mui/material";
 
 const UserProfilePage = () => {
   const user = useSelector((state) => state.auth.user);
@@ -7,7 +8,7 @@ const UserProfilePage = () => {
     <div className={ProfileStyle}>
       <h1>User Profile</h1>
       <h3>{user.display_name}</h3>
-      <img
+      <Avatar
         src={
           user.images.length < 0
             ? user.images[0].url
