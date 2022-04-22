@@ -70,7 +70,7 @@ export default class SearchConcert extends Component {
     
 
     render() {
-        const earlyTwenties = this.state.eventData.resultsPage && this.state.eventData.resultsPage.results.event.map((event) => {
+        const earlyTwenties = this.state.eventData.resultsPage && this.state.eventData.resultsPage.results.event?.map((event) => {
             return (
                 (<Event name={event.displayName} 
                 venue={event.venue.displayName} 
