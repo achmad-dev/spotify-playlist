@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-import { Card } from '@mui/material';
 
 const UserProfilePage = () => {
     const user = useSelector((state) => state.auth.user);
