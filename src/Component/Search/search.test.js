@@ -1,4 +1,5 @@
-import {render, userEvent, screen} from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
+import userEvent from '@testing-library/user-event'
 import Search from './index';
 import { Provider } from "react-redux";
 import store from '../../store/store';
@@ -11,6 +12,8 @@ describe('A search component', () => {
     it('should have a search input', () => {
         const searchInput = screen.getByText('Search');
         expect(searchInput).toBeInTheDocument();
+        userEvent.click(searchInput);
+        expect(searchInput).toHaveValue('');
     }
     );
   });
