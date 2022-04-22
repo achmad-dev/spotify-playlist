@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# GIGIH FINAL PROJECT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Gigih adalah seorang anak muda yang menyukai musik. Hampir setiap hari dia
+mendengarkan musik di Spotify dari berbagai genre. Dia ingin membuat playlist (daftar
+putar) yang berisikan lagu lagu yang sedang ia gandrungi. Bantulah Gigih dengan
+membuat sebuah aplikasi berbasis web sehingga Gigih dapat membuat playlist dengan
+mudah.
+Di aplikasi tersebut, Gigih ingin agar aplikasi tersebut hanya dapat diakses oleh orang
+yang sudah log-in terlebih dahulu. Jika Gigih belum log-in, maka Gigih tidak dapat
+mengakses halaman untuk membuat playlist tersebut, dan akan di-redirect ke halaman
+login.
+Ketika selesai login, maka Gigih ingin melihat halaman untuk membuat playlist. Pertama
+tama, ia ingin agar dia bisa mencari lagu kesukaannya. Ia ingin agar informasi tentang
+foto album, judul lagu, nama penyanyi, dan durasi lagu muncul di hasil pencariannya. Ia
+juga ingin memilih lagu yang nantinya ingin dia jadikan playlist. Ketika ia mencari
+dengan kata kunci yang lain dan menemukan lagu yang sudah pernah ia pilih, ia tidak
+ingin lagu tersebut bisa dia pilih lebih dari satu kali. Ia juga ingin dapat membuang
+pilihan lagu yang sebelumnya dia pilih.
+Jika sudah selesai memilih lagu, Gigih ingin agar ia bisa membuat playlist dari pilihan
+lagu yang sudah dia pilih sebelumnya. Gigih juga ingin selalu menuliskan judul dan
+deskripsi dari playlist tersebut. Untuk judul, ia ingin agar judul dari semua playlist yang
+dia buat menggunakan aplikasi ini, memiliki panjang minimal 10 karakter. Ia juga ingin
+agar playlist yang dibuat selalu merupakan private playlist dan bukan merupakan
+collaborative playlist.
+Ketika playlist sudah berhasil dibuat, Gigih ingin mengetahui bahwa playlist tersebut
+sudah berhasil dibuat.
 
-## Available Scripts
+# Features
 
-In the project directory, you can run:
+checklist:
+- Membuat playlist
+- Mencari lagu
+- melihat user yang sudah login
+- melihat user Profile
+- Mencari Concert dan Event Music di Kota-Kota besar(metropolitan area)
+- Navigasi menu
+- Login
 
-### `npm start`
+# upcoming features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+checkbox:
+- search by genre
+- search by artist
+- search by album
+- search by playlist
+- search Concert and Event Music map
+- search by location
+- search by date
+- search tour music artist
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+# Upcoming Fixes
+ checkbox:
+ - Fix Bugs at Search Concert and Event Music
+ - Fix Style and Responsive
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# How to Run
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. pertama masukan Api key Id kalian di file .env
+2. install package dengan cara: npm install atau yarn add
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# how to test
+1. npm run test
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# To be continued
