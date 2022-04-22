@@ -80,7 +80,6 @@ export default class SearchConcert extends Component {
                 key={event.id} />)
             )
         })
-        if(this.state.error){
             return(
                 <div>
                     <div>
@@ -102,30 +101,6 @@ export default class SearchConcert extends Component {
                         </div>
                     </div>
                 </div>
-                    )
-                }
-            else{
-                return(
-                    <div>
-                        <div>
-                            <form onSubmit={this.handleSubmit}>
-                                <Input type='text' onChange={this.handleChange}
-                                value={this.state.term} placeholder="type a city name..."
-                                id="userInput" />
-                                <Button variant="outlined" type="submit" className='btn-search'>search</Button>
-                                </form>
-                                </div>
-                                <div>
-                                    <h1>Concerts in {this.state.city}</h1>
-                                    <div className={DivStyle}>
-                                        <p id="loading">{this.state.loading && "Loading..."}</p>
-                                        <h2 id="cityName">{this.state.city}</h2>
-                                        <ul id="list">
-                                            {this.state.eventData.resultsPage && earlyTwenties}
-                                            </ul>
-                                        </div>
-                                    </div>
-                            </div>
-                                            )};                       
+                    )                       
     }
 }
