@@ -1,5 +1,6 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
+import { NavLink } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -12,7 +13,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
@@ -44,7 +45,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            LOGO
+            Musicu
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -77,7 +78,14 @@ const ResponsiveAppBar = () => {
               }}
             >
                 <MenuItem>
-                  <Typography textAlign="center">hello</Typography>
+                  <NavLink to="/create-playlist" activeStyle={{ color: 'red' }}>
+                    <Typography textAlign="center">Create Playlist</Typography>
+                  </NavLink>
+                </MenuItem>
+                <MenuItem>
+                  <NavLink to="/search-concert" activeStyle={{ color: 'red' }}>
+                    <Typography textAlign="center">Search Concert</Typography>
+                  </NavLink>
                 </MenuItem>
             </Menu>
           </Box>
@@ -87,24 +95,31 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            LOGO
+            Musicu
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+              <NavLink to="/create-playlist" activeStyle={{ color: 'red' }}>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  Create Playlist
+                </Button>
+              </NavLink>
+              <NavLink to="/search-concert" activeStyle={{ color: 'red' }}>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  Search Concert
+                </Button>
+              </NavLink>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="user" src='https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg' />
               </IconButton>
             </Tooltip>
             <Menu
