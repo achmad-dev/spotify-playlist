@@ -51,7 +51,7 @@ checkbox:
 
 # Upcoming Fixes
  checkbox:
- - Fix Bugs at Search Concert and Event Music
+ - Fix Bugs at Search Concert and Event Music (note: fixed)
  - Fix Style and Responsive
 
 

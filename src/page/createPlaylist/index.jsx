@@ -1,11 +1,15 @@
-import Search from "../../Component/Search";
 import { useState } from "react";
+import Modal from "react-modal";
+import { ReactComponent as MusicLogo } from "./createPlaylistIcon.svg";
+import Button from "@mui/material/Button";
 import Form from "../../Component/Form";
+import Search from "../../Component/Search";
 import Card from "../../Component/Card";
 import styled from "styled-components";
 import { ColumnStyle } from "./style";
 import millisToMinutesAndSeconds from "./timeMsConvert";
-import UserProfile from "../../Component/User/userProfile";
+
+Modal.setAppElement("#root");
 
 const Div = styled.div`
   justify-content: center;
@@ -15,6 +19,11 @@ const Div = styled.div`
 const CreatePlayList = () => {
   const [tracks, setTracks] = useState([]);
   const [selected, setSelected] = useState([]);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const ToggleModal = () => {
+    setModalIsOpen(!modalIsOpen);
+  };
 
   const onSuccessSearch = (tracks) => {
     const selectedTracks = filterSelectedTracks();
@@ -41,11 +50,45 @@ const CreatePlayList = () => {
 
   return (
     <div>
-      <div>
-        <UserProfile />
-      </div>
       <Div className="home">
-        <Form uriTracks={selected} />
+        <div>
+          <div style={{ display: "flex" }}>
+            <Button
+              variant="outlined"
+              style={{
+                backgroundColor: "rgb(36, 36, 36)",
+                background: "rgb(36, 36, 36)",
+              }}
+              onClick={ToggleModal}
+            >
+              <MusicLogo />
+            </Button>
+            <h1>Create Playlist</h1>
+          </div>
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={ToggleModal}
+            style={{
+              overlay: {
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+              },
+              content: {
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                border: "none",
+                borderRadius: "2px",
+                outline: "none",
+                padding: "1px",
+              },
+            }}
+          >
+            <Form uriTracks={selected} />
+            <Button variant="outlined" onClick={ToggleModal}>
+              <b>close</b>
+            </Button>
+          </Modal>
+          <br />
+          <hr />
+        </div>
         <Div className="search-bar">
           <Search onSuccess={(tracks) => onSuccessSearch(tracks)} />
         </Div>
