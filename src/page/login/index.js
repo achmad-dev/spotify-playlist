@@ -22,7 +22,7 @@ const Login = () => {
     );
 
     if (accessTokenParams !== null) {
-      const setUserProfile = async () => {
+      const setUserProfile = () => {
         try {
           const requestOptions = {
             headers: {
@@ -31,7 +31,7 @@ const Login = () => {
             },
           };
 
-          const response = await fetch(
+          const response = fetch(
             `${config.SPOTIFY_BASE_URL}/me`,
             requestOptions
           )
